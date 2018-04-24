@@ -1,11 +1,14 @@
 package com.makzzi;
 
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-        /*ConsoleUtils consoleUtils = new ConsoleUtils();
-        String num = consoleUtils.getNumber();
-        System.out.printf("NUM: %s%n", num);*/
+        /*ConsoleOperation consoleOperation = new ConsoleOperation();
+        String numArray = Arrays.toString(consoleOperation.createNumberArray());
+        System.out.printf("Array: %s", numArray);*/
     }
+
 }

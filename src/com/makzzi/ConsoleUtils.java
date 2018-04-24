@@ -4,21 +4,6 @@ import java.util.Scanner;
 
 public class ConsoleUtils {
 
-    public int[] getIntArray(int lengthArray) {
-        try {
-            int[] arr = new int[lengthArray];
-            for (int i = 0; i < lengthArray; i++)
-                arr[i] = getInt();
-            return arr;
-        }
-        catch (NegativeArraySizeException ex) {
-            System.out.printf("Exception: %s%nEnter a positive length for the array: ", ex);
-            int index = getInt();
-            while (index < 0) index = getInt();
-            return getIntArray(index);
-        }
-    }
-
     public int getInt() {
         Scanner scan = new Scanner(System.in);
         if (scan.hasNextInt()) {
@@ -28,6 +13,15 @@ public class ConsoleUtils {
         return getInt();
     }
 
+    public int[] getIntArray(int lengthArray) {
+        lengthArray = Math.abs(lengthArray);
+        if (lengthArray < 0) lengthArray = 0;
+        int[] intArr = new int[lengthArray];
+        for (int i = 0; i < lengthArray; i++)
+            intArr[i] = getInt();
+        return intArr;
+    }
+
     public String getNumber() {
         Scanner scan = new Scanner(System.in);
         if (scan.hasNext("\\s*[-]?(\\d+|\\d+[.]\\d+)\\s*")) return scan.next();
@@ -35,8 +29,13 @@ public class ConsoleUtils {
     }
 
 
-    /*public String[] getArrayOfNumbers(int lengthArray) {
-
-    }*/
+    public String[] getNumberArray(int lengthArray) {
+        lengthArray = Math.abs(lengthArray);
+        if (lengthArray < 0) lengthArray = 0;
+        String[] numArr = new String[lengthArray];
+        for (int i = 0; i < lengthArray; i++)
+            numArr[i] = getNumber();
+        return numArr;
+    }
 
 }
