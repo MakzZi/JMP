@@ -28,4 +28,15 @@ public class ConsoleUtils {
         return getInt();
     }
 
+    public String getNumber() {
+        Scanner scan = new Scanner(System.in);
+        if (scan.hasNext("\\s*[-]?(\\d+|\\d+[.]\\d+)\\s*")) return scan.next();
+        return getNumber();
+    }
+
+
+    /*public String[] getArrayOfNumbers(int lengthArray) {
+
+    }*/
+
 }
