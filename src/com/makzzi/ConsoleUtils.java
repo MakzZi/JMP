@@ -2,7 +2,7 @@ package com.makzzi;
 
 import java.util.Scanner;
 
-public class ReadInputConsole {
+public class ConsoleUtils {
 
     public int[] getIntArray(int lengthArray) {
         try {
@@ -27,4 +27,5 @@ public class ReadInputConsole {
         }
         return getInt();
     }
+
 }
