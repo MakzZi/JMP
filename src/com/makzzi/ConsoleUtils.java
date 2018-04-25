@@ -28,7 +28,6 @@ public class ConsoleUtils {
         return getNumber();
     }
 
-
     public String[] getNumberArray(int lengthArray) {
         lengthArray = Math.abs(lengthArray);
         if (lengthArray < 0) lengthArray = 0;
