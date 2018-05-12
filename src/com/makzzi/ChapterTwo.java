@@ -2,7 +2,7 @@ package com.makzzi;
 
 public class ChapterTwo {
 
-    public void showShortLongNumber(String[] array) {
+    public void showShortLongNumberInArray(String[] array) {
         int lengthArray = array.length;
         if (lengthArray > 0) {
             int lengthNum = array[0].length();
