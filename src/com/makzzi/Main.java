@@ -6,6 +6,6 @@ public class Main {
         ConsoleOperation createArray = new ConsoleOperation();
         ChapterTwo chapterTwo = new ChapterTwo();
         //2.1.a//chapterTwo.showShortLongNumberInArray(createArray.createNumberArray());
+        //2.2.a//chapterTwo.showSortedArrayArrayByLengthOfNumber(createArray.createNumberArray());
     }
-
 }
