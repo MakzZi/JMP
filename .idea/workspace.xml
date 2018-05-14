@@ -18,8 +18,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="89" selection-start-line="9" selection-start-column="89" selection-end-line="9" selection-end-column="89" />
+            <state relative-caret-position="187">
+              <caret line="11" column="73" lean-forward="true" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -45,8 +45,15 @@
       <file leaf-file-name="ChapterTwo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="78" column="146" selection-start-line="78" selection-start-column="146" selection-end-line="78" selection-end-column="146" />
+            <state relative-caret-position="459">
+              <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+              <folding>
+                <element signature="method#showShortLongNumberInArray#0;class#ChapterTwo#0" />
+                <element signature="method#sortingArrayByLengthOfNumbers#0;class#ChapterTwo#0" />
+                <element signature="method#showSortedArrayArrayByLengthOfNumber#0;class#ChapterTwo#0" />
+                <element signature="method#getArrayLength#0;class#ChapterTwo#0" />
+                <element signature="method#getAverageNumer#0;class#ChapterTwo#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -194,7 +201,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23207547" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -588,10 +595,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/makzzi/ConsoleOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="89" selection-start-line="9" selection-start-column="89" selection-end-line="9" selection-end-column="89" />
+        <state relative-caret-position="34">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -602,17 +609,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/makzzi/ConsoleOperation.java">
+    <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="187">
+          <caret line="11" column="73" lean-forward="true" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="78" column="146" selection-start-line="78" selection-start-column="146" selection-end-line="78" selection-end-column="146" />
+        <state relative-caret-position="459">
+          <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
+          <folding>
+            <element signature="method#showShortLongNumberInArray#0;class#ChapterTwo#0" />
+            <element signature="method#sortingArrayByLengthOfNumbers#0;class#ChapterTwo#0" />
+            <element signature="method#showSortedArrayArrayByLengthOfNumber#0;class#ChapterTwo#0" />
+            <element signature="method#getArrayLength#0;class#ChapterTwo#0" />
+            <element signature="method#getAverageNumer#0;class#ChapterTwo#0" />
+          </folding>
         </state>
       </provider>
     </entry>

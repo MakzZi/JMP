@@ -5,7 +5,10 @@ public class Main {
     public static void main(String[] args) {
         ConsoleOperation createArray = new ConsoleOperation();
         ChapterTwo chapterTwo = new ChapterTwo();
-        //2.1.a//chapterTwo.showShortLongNumberInArray(createArray.createNumberArray());
-        //2.2.a//chapterTwo.showSortedArrayArrayByLengthOfNumber(createArray.createNumberArray());
+        String[] arrayNums = createArray.createNumberArray();
+        //2.1.a//chapterTwo.showShortLongNumberInArray(arrayNums);
+        //2.2.a//chapterTwo.showSortedArrayByLengthOfNumber(arrayNums);
+        //2.3.a//chapterTwo.showGreaterAndLessThanAverageNumberInArray(arrayNums);
     }
+
 }

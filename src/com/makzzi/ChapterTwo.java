@@ -29,10 +29,7 @@ public class ChapterTwo {
 
     private String[] sortingArrayByLengthOfNumbers(String[] arrayString, boolean ascending) {
         int length = arrayString.length-1;
-        int[] arrayLength = new int[length+1];
-        for (int i = 0; i <= length; i++) {
-            arrayLength[i] = arrayString[i].length();
-        }
+        int[] arrayLength = getArrayLength(arrayString);
         boolean swaped = true;
         int tmpLength;
         String tmpNumber;
@@ -73,10 +70,38 @@ public class ChapterTwo {
         return arrayString;
     }
 
-    public void showSortedArrayArrayByLengthOfNumber(String[] array) {
+    public void showSortedArrayByLengthOfNumber(String[] array) {
         System.out.println("Initial array: " + Arrays.toString(array));
         System.out.println("Sorted array in ascending order by length of numbers: " + Arrays.toString(sortingArrayByLengthOfNumbers(array, true)));
         System.out.println("Sorted array in descending order by length of numbers: " + Arrays.toString(sortingArrayByLengthOfNumbers(array, false)));
     }
-    
+
+    private int[] getArrayLength(String[] arrayNums) {
+        int[] arrayLength = new int[arrayNums.length];
+        for (int i = 0; i < arrayNums.length; i++)
+            arrayLength[i] = arrayNums[i].length();
+        return arrayLength;
+    }
+
+    private int getAverageNumber(int[] arrayInt) {
+        int sum = 0;
+        for (int num : arrayInt)
+            sum += num;
+        return sum / arrayInt.length;
+    }
+
+    public void showGreaterAndLessThanAverageNumberInArray(String[] arrayNums) {
+        int[] arrayLength = getArrayLength(arrayNums);
+        int average = getAverageNumber(arrayLength);
+        String greater = "", less = "";
+        for (int i = 0; i < arrayNums.length; i++) {
+            if (arrayLength[i] > average)
+                greater += " "+arrayNums[i];
+            else
+                less += " "+arrayNums[i];
+        }
+        System.out.println("Numbers greater than the average length number in the array:" + greater);
+        System.out.println("Numbers less than the average length number in the array:" + less);
+    }
+
 }
