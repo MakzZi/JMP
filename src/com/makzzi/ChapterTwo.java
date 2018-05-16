@@ -104,4 +104,26 @@ public class ChapterTwo {
         System.out.println("Numbers less than the average length number in the array:" + less);
     }
 
+    private int qntyUniqueDigitsInNumber(String number) {
+        number = number.replaceAll("\\W", "");
+        int count = 0;
+        while (number.length() > 0) {
+            number = number.replaceAll(number.substring(0,1), "");
+            count++;
+        }
+        return count;
+    }
+
+    public void showNumberWithMinimunUniqueDigits(String[] nums) {
+        int current, indexMin = 0, minimum = qntyUniqueDigitsInNumber(nums[0]);
+        for (int i = 1; i < nums.length; i++) {
+            current = qntyUniqueDigitsInNumber(nums[i]);
+            if (minimum > current) {
+                minimum = current;
+                indexMin = i;
+            }
+        }
+        System.out.println("Number in which the minimum quantity of unique digits: " + nums[indexMin]);
+    }
+
 }
