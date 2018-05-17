@@ -10,6 +10,7 @@ public class Main {
         //2.2.a//chapterTwo.showSortedArrayByLengthOfNumber(arrayNums);
         //2.3.a//chapterTwo.showGreaterAndLessThanAverageNumberInArray(arrayNums);
         //2.4.a//chapterTwo.showNumberWithMinimunUniqueDigits(arrayNums);
+        //2.5.a//chapterTwo.showOnlyEvenOrSameEvenOddDigitsInNumbers(arrayNums);
     }
 
 }

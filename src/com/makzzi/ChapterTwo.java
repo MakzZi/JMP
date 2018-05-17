@@ -126,4 +126,28 @@ public class ChapterTwo {
         System.out.println("Number in which the minimum quantity of unique digits: " + nums[indexMin]);
     }
 
+    public void showOnlyEvenOrSameEvenOddDigitsInNumbers(String[] nums) {
+        String even = "";
+        String evenOdd = "";
+        String num;
+        int countEven, countOdd;
+        for (int i = 0; i < nums.length; i++) {
+            num = nums[i].replaceAll("\\W", "");
+            countEven = 0;
+            countOdd = 0;
+            for (int j = 0; j < num.length(); j++) {
+                if ((int) num.charAt(j) % 2 == 0)
+                    countEven++;
+                else
+                    countOdd++;
+            }
+            if (countEven == num.length())
+                even += nums[i] + " ";
+            else if (countEven == countOdd)
+                evenOdd += nums[i] + " ";
+        }
+        System.out.println("Numbers to which all digits are even : " + even);
+        System.out.println("Numbers to which even and odd digits in the same: " + evenOdd);
+    }
+
 }
