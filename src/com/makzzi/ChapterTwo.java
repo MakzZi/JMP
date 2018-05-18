@@ -189,4 +189,24 @@ public class ChapterTwo {
         }
     }
 
+
+    private boolean isPalindrome(String num) {
+        for (int i = 0, j = num.length()-1; i < num.length()/2; i++, j--)
+            if (num.charAt(i) != num.charAt(j))
+                return false;
+        return true;
+    }
+
+    public void showPalindrome(String[] nums) {
+        int count = 0;
+        String palindrome = "none";
+        for (int i = 0; i < nums.length && count < 2; i++) {
+            if (isPalindrome(nums[i])) {
+                palindrome = nums[i];
+                count++;
+            }
+        }
+        System.out.printf("Palindrome #%d: %s%n", count, palindrome);
+    }
+
 }
