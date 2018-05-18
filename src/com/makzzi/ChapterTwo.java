@@ -72,8 +72,10 @@ public class ChapterTwo {
 
     public void showSortedArrayByLengthOfNumber(String[] array) {
         System.out.println("Initial array: " + Arrays.toString(array));
-        System.out.println("Sorted array in ascending order by length of numbers: " + Arrays.toString(sortingArrayByLengthOfNumbers(array, true)));
-        System.out.println("Sorted array in descending order by length of numbers: " + Arrays.toString(sortingArrayByLengthOfNumbers(array, false)));
+        System.out.println("Sorted array in ascending order by length of numbers: "
+                + Arrays.toString(sortingArrayByLengthOfNumbers(array, true)));
+        System.out.println("Sorted array in descending order by length of numbers: "
+                + Arrays.toString(sortingArrayByLengthOfNumbers(array, false)));
     }
 
     private int[] getArrayLength(String[] arrayNums) {
@@ -167,6 +169,23 @@ public class ChapterTwo {
                 }
             }
             if (found) System.out.println("Number: " + nums[indexNumber]);
+        }
+    }
+
+    public void showNumberConsistDifferentDigits(String[] nums) {
+        String num;
+        boolean diff = false;
+        for (int indexNumber = 0; !diff && indexNumber < nums.length; indexNumber++) {
+            num = nums[indexNumber].replace("\\W", "");
+            diff = true;
+            for (int targetDigit = 1; diff && targetDigit < num.length(); targetDigit++) {
+                for (int i = 0; diff && i < targetDigit; i++) {
+                    if (num.charAt(targetDigit) == num.charAt(i)) {
+                        diff = false;
+                    }
+                }
+            }
+            if (diff) System.out.println("Number that consists of different digits: " + nums[indexNumber]);
         }
     }
 

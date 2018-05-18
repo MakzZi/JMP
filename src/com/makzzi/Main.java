@@ -12,6 +12,7 @@ public class Main {
         //2.4.a//chapterTwo.showNumberWithMinimunUniqueDigits(arrayNums);
         //2.5.a//chapterTwo.showOnlyEvenOrSameEvenOddDigitsInNumbers(arrayNums);
         //2.6.a//chapterTwo.showNumberContainDigitsInAscendingOrder(arrayNums);
+        //2.7.a//chapterTwo.showNumberConsistDifferentDigits(arrayNums);
     }
 
 }
