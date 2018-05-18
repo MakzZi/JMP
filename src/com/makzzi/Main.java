@@ -11,6 +11,7 @@ public class Main {
         //2.3.a//chapterTwo.showGreaterAndLessThanAverageNumberInArray(arrayNums);
         //2.4.a//chapterTwo.showNumberWithMinimunUniqueDigits(arrayNums);
         //2.5.a//chapterTwo.showOnlyEvenOrSameEvenOddDigitsInNumbers(arrayNums);
+        //2.6.a//chapterTwo.showNumberContainDigitsInAscendingOrder(arrayNums);
     }
 
 }

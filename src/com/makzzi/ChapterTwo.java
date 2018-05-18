@@ -150,4 +150,24 @@ public class ChapterTwo {
         System.out.println("Numbers to which even and odd digits in the same: " + evenOdd);
     }
 
+    public void showNumberContainDigitsInAscendingOrder(String[] nums) {
+        String num;
+        int previous, digit;
+        boolean found = false;
+        for (int indexNumber = 0; !found && indexNumber < nums.length; indexNumber++) {
+            found = true;
+            num = nums[indexNumber].replace("\\W", "");
+            previous = (int) num.charAt(0);
+            for (int indexDigit = 1; found && indexDigit < num.length(); indexDigit++) {
+                found = false;
+                digit = (int)num.charAt(indexDigit);
+                if (digit > previous) {
+                    previous = digit;
+                    found = true;
+                }
+            }
+            if (found) System.out.println("Number: " + nums[indexNumber]);
+        }
+    }
+
 }
