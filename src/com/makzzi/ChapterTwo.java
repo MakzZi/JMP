@@ -209,4 +209,44 @@ public class ChapterTwo {
         System.out.printf("Palindrome #%d: %s%n", count, palindrome);
     }
 
+    public void showNumberBelongInterval(int k, int n, int m) {
+        if (k > n && k <= m)
+            System.out.printf("%d ∈ (%d, %d]%n", k, n, m);
+        else
+            System.out.printf("%d ∉ (%d, %d]%n", k, n, m);
+        if (k >= n && k < m)
+            System.out.printf("%d ∈ [%d, %d)%n", k, n, m);
+        else
+            System.out.printf("%d ∉ [%d, %d)%n", k, n, m);
+        if (k > n && k < m)
+            System.out.printf("%d ∈ (%d, %d)%n", k, n, m);
+        else
+            System.out.printf("%d ∉ (%d, %d)%n", k, n, m);
+        if (k >= n && k <= m)
+            System.out.printf("%d ∈ [%d, %d]%n", k, n, m);
+        else
+            System.out.printf("%d ∉ [%d, %d]%n", k, n, m);
+    }
+
+    public void showNumberBelongInterval(double k, double n, double m) {
+        if (k > n && k <= m)
+            System.out.printf("%d ∈ (%d, %d]%n", k, n, m);
+        else
+            System.out.printf("%d ∉ (%d, %d]%n", k, n, m);
+        if (k >= n && k < m)
+            System.out.printf("%d ∈ [%d, %d)%n", k, n, m);
+        else
+            System.out.printf("%d ∉ [%d, %d)%n", k, n, m);
+        if (k > n && k < m)
+            System.out.printf("%d ∈ (%d, %d)%n", k, n, m);
+        else
+            System.out.printf("%d ∉ (%d, %d)%n", k, n, m);
+        if (k >= n && k <= m)
+            System.out.printf("%d ∈ [%d, %d]%n", k, n, m);
+        else
+            System.out.printf("%d ∉ [%d, %d]%n", k, n, m);
+    }
+
+
+
 }
