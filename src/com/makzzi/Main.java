@@ -16,7 +16,8 @@ public class Main {
         //2.8.a//chapterTwo.showPalindrome(arrayNums);
         //2.1.b//int k = 2, n = 2, m = 3;
         //chapterTwo.showNumberBelongInterval(k, n, m);
-        
+        //2.2.b//chapterTwo.showMatrix(100);
+
 
     }
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f4cdca0-02fc-4a4b-b858-899eabb5ab6d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/makzzi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/makzzi/Main.java" afterDir="false" />
     </list>
@@ -19,8 +18,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="102">
+              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -46,8 +45,8 @@
       <file leaf-file-name="ChapterTwo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="249" selection-start-line="249" selection-end-line="249" />
+            <state relative-caret-position="156">
+              <caret line="250" column="45" selection-start-line="250" selection-start-column="45" selection-end-line="250" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -72,8 +71,8 @@
         <option value="$PROJECT_DIR$/src/com/makzzi/ConsoleOperation.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/makzzi/ConsoleUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/makzzi/Main.java" />
         <option value="$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java" />
+        <option value="$PROJECT_DIR$/src/com/makzzi/Main.java" />
       </list>
     </option>
   </component>
@@ -603,15 +602,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
+        <state relative-caret-position="156">
+          <caret line="250" column="45" selection-start-line="250" selection-start-column="45" selection-end-line="250" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state relative-caret-position="102">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>

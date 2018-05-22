@@ -247,6 +247,41 @@ public class ChapterTwo {
             System.out.printf("%d ∉ [%d, %d]%n", k, n, m);
     }
 
+    private String printFixedLength(String str, int length) {
+        int space = length - str.length() + 1;
+        while (space != 0) {
+            str += " ";
+            space--;
+        }
+        return str;
+    }
 
+    public void showMatrix(int k) {
+        double dN = Math.sqrt(k);
+        int n = (int)dN;
+        if (dN*dN != n*n) n++;
+        int num = 1;
+        int lengthLastNumber = Integer.toString(k).length();
+        for (int i = 1; i <= k / n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(printFixedLength(Integer.toString(num), lengthLastNumber));
+                num++;
+            }
+            System.out.println();
+        }
+        for (int j = 1; j <= n; j++) {
+            if (num <= k)
+            {
+                System.out.print(printFixedLength(Integer.toString(num), lengthLastNumber));
+                num++;
+            }
+            else {
+                System.out.print(printFixedLength("0", lengthLastNumber));
+                num++;
+            }
+        }
+
+
+    }
 
 }
