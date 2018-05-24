@@ -1,5 +1,6 @@
 package com.makzzi;
 
+import javax.naming.NameNotFoundException;
 import java.util.Arrays;
 
 public class ChapterTwo {
@@ -280,8 +281,25 @@ public class ChapterTwo {
                 num++;
             }
         }
+    }
 
-
+    public void quadraticEquation() {
+        System.out.println("ax^2 + bx + c = 0");
+        ConsoleUtils utils = new ConsoleUtils();
+        System.out.print("a: ");
+        int a = utils.getInt();
+        System.out.print("b: ");
+        int b = utils.getInt();
+        System.out.print("c: ");
+        int c = utils.getInt();
+        System.out.printf("%n%dx^2 + %dx + %d = 0%n", a, b, c);
+        double d = Math.sqrt(Math.pow(b,2)-4*a*c);
+        if (d < 0 || Double.isNaN(d))
+            System.out.println("has not roots");
+        else if (d == 0)
+            System.out.printf("x = %.3f%n", (double)-b/2*a);
+        else
+            System.out.printf("x1 = %.3f%nx2 = %.3f%n", (-b + d) / (2*a), (-b - d) / (2*a));
     }
 
 }
