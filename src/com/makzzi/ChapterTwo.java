@@ -283,6 +283,21 @@ public class ChapterTwo {
         }
     }
 
+    public void showMatrixNB(int k) {
+        double dN = Math.sqrt(k);
+        int n = (int)dN;
+        if (dN*dN != n*n) n++;
+        int[][] matrix = new int[n][n];
+        int count = 1;
+        for (int i = 0; i < n && count <= k; i++) {
+            for (int j = 0; j < n && count <= k; j++) {
+                matrix[i][j] = count;
+                count++;
+            }
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+    }
+
     public void quadraticEquation() {
         System.out.println("ax^2 + bx + c = 0");
         ConsoleUtils utils = new ConsoleUtils();
