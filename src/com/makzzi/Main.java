@@ -18,7 +18,7 @@ public class Main {
         //chapterTwo.showNumberBelongInterval(k, n, m);
         //2.2.b//chapterTwo.showMatrix(102);
         //2.3.b//chapterTwo.quadraticEquation();
-        //2.4.b//System.out.println(chapterTwo.month(11));
+        //2.4.b//chapterTwo.showMonth();
 
     }
 

@@ -317,7 +317,7 @@ public class ChapterTwo {
             System.out.printf("x1 = %.3f%nx2 = %.3f%n", (-b + d) / (2*a), (-b - d) / (2*a));
     }
 
-    public String month(int num) {
+    private String month(int num) {
         switch (num) {
             case 1: return "January";
             case 2: return "February";
@@ -335,5 +335,11 @@ public class ChapterTwo {
         }
     }
 
+    public void showMonth() {
+        System.out.print("Enter month number: ");
+        ConsoleUtils month = new ConsoleUtils();
+        int number = month.getInt();
+        System.out.println(month(number));
+    }
 
 }
