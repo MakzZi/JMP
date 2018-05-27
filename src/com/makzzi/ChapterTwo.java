@@ -2,6 +2,7 @@ package com.makzzi;
 
 import javax.naming.NameNotFoundException;
 import java.util.Arrays;
+import java.util.Random;
 
 public class ChapterTwo {
 
@@ -340,6 +341,43 @@ public class ChapterTwo {
         ConsoleUtils month = new ConsoleUtils();
         int number = month.getInt();
         System.out.println(month(number));
+    }
+
+    private int[][] createMatrixNxN(int n) {
+        int[][] matrix = new int[n][n];
+        Random rnd = new Random();
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                matrix[i][j] = rnd.nextInt(n*2+1)-n;
+        return matrix;
+    }
+
+    private void printMatrix(int[][] matrix, int n) {
+        int lengthN = Integer.toString(-n).length()+3;
+        int lengthNumber;
+        String number;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                number = Integer.toString(matrix[i][j]);
+                lengthNumber = number.length();
+                if (number.charAt(0) != '-') {
+                    number = " " + number;
+                    lengthNumber++;
+                }
+                for (int s = 0; s < lengthN - lengthNumber; s++)
+                    number += " ";
+                System.out.print(number);
+            }
+            System.out.println();
+        }
+    }
+
+    public void showMatrixNxN() {
+        System.out.print("Enter N: ");
+        ConsoleUtils getN = new ConsoleUtils();
+        int n = getN.getInt();
+        int[][] matrix = createMatrixNxN(n);
+        printMatrix(matrix, n);
     }
 
 }

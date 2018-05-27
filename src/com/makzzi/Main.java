@@ -19,7 +19,7 @@ public class Main {
         //2.2.b//chapterTwo.showMatrix(102);
         //2.3.b//chapterTwo.quadraticEquation();
         //2.4.b//chapterTwo.showMonth();
-
+        chapterTwo.showMatrixNxN();
     }
 
 }
