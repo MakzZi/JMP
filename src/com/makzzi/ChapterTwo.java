@@ -352,7 +352,8 @@ public class ChapterTwo {
         return matrix;
     }
 
-    private void printMatrix(int[][] matrix, int n) {
+    private void printMatrix(int[][] matrix) {
+        int n = matrix.length;
         int lengthN = Integer.toString(-n).length()+3;
         int lengthNumber;
         String number;
@@ -372,12 +373,56 @@ public class ChapterTwo {
         }
     }
 
-    public void showMatrixNxN() {
+
+
+    public int[][] getMatrixNxN() {
         System.out.print("Enter N: ");
         ConsoleUtils getN = new ConsoleUtils();
         int n = getN.getInt();
         int[][] matrix = createMatrixNxN(n);
-        printMatrix(matrix, n);
+        printMatrix(matrix);
+        return matrix;
+    }
+
+    public void sortColumnMatrix(int[][] matrix, int k) {
+        boolean sorting = true;
+        int length = matrix[k].length-1;
+        while(sorting) {
+            for (int i = 0; i < length; i++) {
+                sorting = false;
+                if (matrix[i][k] > matrix[i+1][k]) {
+                    int[] tmp = matrix[i];
+                    matrix[i] = matrix[i+1];
+                    matrix[i+1] = tmp;
+                    sorting = true;
+                }
+            }
+            length--;
+        }
+        System.out.println("\nSorted:");
+        printMatrix(matrix);
+    }
+
+    public void sortRowMatrix(int[][] matrix, int k) {
+        boolean sorting = true;
+        int length = matrix[k].length-1;
+        int tmp;
+        while(sorting) {
+            for (int column = 0; column < length; column++) {
+                sorting = false;
+                if (matrix[k][column] > matrix[k][column+1]) {
+                    for (int row = 0; row < matrix[k].length; row++) {
+                        tmp = matrix[row][column];
+                        matrix[row][column] = matrix[row][column+1];
+                        matrix[row][column+1] = tmp;
+                    }
+                    sorting = true;
+                }
+            }
+            length--;
+        }
+        System.out.println("\nSorted:");
+        printMatrix(matrix);
     }
 
 }
