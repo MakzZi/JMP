@@ -425,4 +425,86 @@ public class ChapterTwo {
         printMatrix(matrix);
     }
 
+    private int[][] moveUpMatrix(int[][] matrix, int k) {
+        while(k != 0) {
+            int[] tmp = matrix[0];
+            for (int row = 1; row < matrix.length; row++)
+                matrix[row-1] = matrix[row];
+            matrix[matrix.length-1] = tmp;
+            k--;
+        }
+        return matrix;
+    }
+
+    private int[][] moveDownMatrix(int[][] matrix, int k) {
+        while(k != 0) {
+            int[] tmp = matrix[matrix.length-1];
+            for (int row = matrix.length-2; row >= 0; row--)
+                matrix[row+1] = matrix[row];
+            matrix[0] = tmp;
+            k--;
+        }
+        return matrix;
+    }
+
+    private int[][] moveRightMatrix(int[][] matrix, int k) {
+        int[] remember = new int[matrix.length];
+        while(k != 0) {
+            for (int row = 0; row < matrix.length; row++)
+                remember[row] = matrix[row][matrix.length-1];
+            for (int column = matrix.length-2; column >= 0; column--) {
+                for (int row = 0; row < matrix.length; row++) {
+                    matrix[row][column+1] = matrix[row][column];
+                }
+            }
+            for (int row = 0; row < matrix.length; row++)
+                matrix[row][0] = remember[row];
+            k--;
+        }
+        return matrix;
+    }
+
+    private int[][] moveLeftMatrix(int[][] matrix, int k) {
+        int[] remember = new int[matrix.length];
+        while(k != 0) {
+            for (int row = 0; row < matrix.length; row++)
+                remember[row] = matrix[row][0];
+            for (int column = 1; column < matrix.length; column++) {
+                for (int row = 0; row < matrix.length; row++) {
+                    matrix[row][column-1] = matrix[row][column];
+                }
+            }
+            for (int row = 0; row < matrix.length; row++)
+                matrix[row][matrix.length-1] = remember[row];
+            k--;
+        }
+        return matrix;
+    }
+
+    public void moveMatrix() {
+        int[][] matrix = getMatrixNxN();
+        ConsoleUtils consoleUtils = new ConsoleUtils();
+        System.out.print("How much to the RIGHT? : ");
+        int k = consoleUtils.getInt();
+        if (k > 0)
+            moveRightMatrix(matrix, k);
+        else {
+            System.out.print("to the LEFT? : ");
+            k = consoleUtils.getInt();
+            if (k > 0)
+                moveLeftMatrix(matrix, k);
+        }
+        System.out.print("How much to move UP? : ");
+        k = consoleUtils.getInt();
+        if (k > 0)
+            moveUpMatrix(matrix, k);
+        else {
+            System.out.print("DOWN? : ");
+            k = consoleUtils.getInt();
+            if (k > 0)
+                moveDownMatrix(matrix, k);
+        }
+        printMatrix(matrix);
+    }
+
 }

@@ -21,6 +21,7 @@ public class Main {
         //2.4.b//chapterTwo.showMonth();
         //2.1.c//chapterTwo.sortRowMatrix(chapterTwo.getMatrixNxN(), 1);
         //       chapterTwo.sortColumnMatrix(chapterTwo.getMatrixNxN(), 1);
+        //2.2.c//chapterTwo.moveMatrix();
     }
 
 }
