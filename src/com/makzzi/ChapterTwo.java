@@ -547,4 +547,28 @@ public class ChapterTwo {
                 "%n in descending order: %d%n", ascending, descending);
     }
 
+    public void sumBetweenFirstPositoveTwoNumbersInLine() {
+        int[][] matrix = getMatrixNxN();
+        int total = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix.length; column++) {
+                int sumRow = 0;
+                if (matrix[row][column] > 0) {
+                    sumRow += matrix[row][column];
+                    column++;
+                    while (column < matrix.length) {
+                        sumRow += matrix[row][column];
+                        if (matrix[row][column] > 0) {
+                            total += sumRow;
+                            System.out.printf("Row #%d: %d%n", row+1, sumRow);
+                            column = matrix.length;
+                        }
+                        column++;
+                    }
+                }
+            }
+        }
+        System.out.printf("Total: %d%n", total);
+    }
+
 }

@@ -23,6 +23,7 @@ public class Main {
         //       chapterTwo.sortColumnMatrix(chapterTwo.getMatrixNxN(), 1);
         //2.2.c//chapterTwo.moveMatrix();
         //2.3.c//chapterTwo.largestNumberElementsMatrixInAscendingOrder();
+        //2.4.c//chapterTwo.sumBetweenFirstPositoveTwoNumbersInLine();
     }
 
 }
