@@ -547,7 +547,7 @@ public class ChapterTwo {
                 "%n in descending order: %d%n", ascending, descending);
     }
 
-    public void sumBetweenFirstPositoveTwoNumbersInLine() {
+    public void sumBetweenFirstPositiveTwoNumbersInLine() {
         int[][] matrix = getMatrixNxN();
         int total = 0;
         for (int row = 0; row < matrix.length; row++) {
@@ -569,6 +569,16 @@ public class ChapterTwo {
             }
         }
         System.out.printf("Total: %d%n", total);
+    }
+
+    public void transposeMatrix() {
+        int[][] matrix = getMatrixNxN();
+        int[][] transpose = new int[matrix.length][matrix.length];
+        for (int row = 0; row < matrix.length; row++)
+            for (int column = 0; column < matrix.length; column++)
+                transpose[column][row] = matrix[row][column];
+        System.out.println("Transpose:");
+        printMatrix(transpose);
     }
 
 }
