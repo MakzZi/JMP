@@ -507,4 +507,44 @@ public class ChapterTwo {
         printMatrix(matrix);
     }
 
+    public void largestNumberElementsMatrixInAscendingOrder() {
+        int[][] matrix = getMatrixNxN();
+        int ascending = 0;
+        int descending = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            int countAscending = 1;
+            int countDescending = 1;
+            for (int column = 0; column < matrix.length-1; column++) {
+                if (matrix[row][column] <= matrix[row][column+1]) {
+                    countAscending++;
+                    if (countAscending > ascending) ascending = countAscending;
+                }
+                else countAscending = 1;
+                if (matrix[row][column] >= matrix[row][column+1]) {
+                    countDescending++;
+                    if (countDescending > descending) descending = countDescending;
+                }
+                else countDescending = 1;
+            }
+        }
+        for (int column = 0; column < matrix.length; column++) {
+            int countAscending = 1;
+            int countDescending = 1;
+            for (int row = 0; row < matrix.length-1; row++) {
+                if (matrix[row][column] <= matrix[row+1][column]) {
+                    countAscending++;
+                    if (countAscending > ascending) ascending = countAscending;
+                }
+                else countAscending = 1;
+                if (matrix[row][column] >= matrix[row+1][column]) {
+                    countDescending++;
+                    if (countDescending > descending) descending = countDescending;
+                }
+                else countDescending = 1;
+            }
+        }
+        System.out.printf("The largest number of elements in the matrix%n in ascending order: %d" +
+                "%n in descending order: %d%n", ascending, descending);
+    }
+
 }
