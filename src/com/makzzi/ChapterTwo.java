@@ -581,4 +581,39 @@ public class ChapterTwo {
         printMatrix(transpose);
     }
 
+    public void determinantMatrix() {
+        int[][] matrix = getMatrixNxN();
+        System.out.println();
+        int sum = 0;
+        for (int column = 0; column < matrix.length; column++) {
+            int m = 1;
+            for (int row = 0, sub = column; row < matrix.length; row++) {
+                System.out.printf("%d ", matrix[row][sub]);
+                m *= matrix[row][sub];
+                sub++;
+                if (sub > matrix.length-1) sub -= matrix.length;
+
+            }
+            sum += m;
+            if (column != matrix.length-1) System.out.print(" +  ");
+        }
+        System.out.println(" = " + sum);
+
+        int div = 0;
+        for (int column = 0; column < matrix.length; column++) {
+            int m = 1;
+            for (int row = matrix.length-1, sub = column; row >= 0; row--) {
+                System.out.printf("%d ", matrix[row][sub]);
+                m *= matrix[row][sub];
+                sub++;
+                if (sub > matrix.length-1) sub -= matrix.length;
+
+            }
+            div += m;
+            if (column != matrix.length-1) System.out.print(" +  ");
+        }
+        System.out.println(" = " + div);
+        System.out.printf("The determinant of the matrix: %d%n", (sum - div));
+    }
+
 }
