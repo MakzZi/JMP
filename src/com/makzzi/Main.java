@@ -25,7 +25,11 @@ public class Main {
         //2.3.c//chapterTwo.largestNumberElementsMatrixInAscendingOrder();
         //2.4.c//chapterTwo.sumBetweenFirstPositiveTwoNumbersInLine();
         //2.5.c//chapterTwo.transposeMatrix();
-        chapterTwo.determinantMatrix();
+        //chapterTwo.determinantMatrix();
+        int[][] matrix = {{1,2,3,10},{4,5,6,11},{7,8,9,12},{16,15,14,13}};
+        chapterTwo.printMatrix(matrix);
+
+        chapterTwo.fractionMatrix(matrix);
     }
 
 }

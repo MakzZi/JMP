@@ -352,7 +352,7 @@ public class ChapterTwo {
         return matrix;
     }
 
-    private void printMatrix(int[][] matrix) {
+    public void printMatrix(int[][] matrix) {
         int n = matrix.length;
         int lengthN = Integer.toString(-n).length()+3;
         int lengthNumber;
@@ -614,6 +614,28 @@ public class ChapterTwo {
         }
         System.out.println(" = " + div);
         System.out.printf("The determinant of the matrix: %d%n", (sum - div));
+    }
+
+    private int[][] cutMatrix(int[][] matrix, int rowCut, int columnCut) {
+        int[][] piece = new int[matrix.length-rowCut-1][matrix.length-rowCut-1];
+        for (int row = rowCut+1; row < matrix.length; row++) {
+            for (int column = matrix.length-piece.length, columnPiece = 0; column < matrix.length; column++, columnPiece++) {
+                if (column != columnCut)
+                    piece[row-(rowCut+1)][columnPiece] = matrix[row][column];
+                else
+                    columnPiece--;
+            }
+        }
+        return piece;
+    }
+
+    public void fractionMatrix(int[][] matrix) {
+        System.out.println();
+        for (int row = 0; row < matrix.length; row++) {
+                for (int column = 0; column < matrix.length; column++) {
+
+                }
+        }
     }
 
 }
