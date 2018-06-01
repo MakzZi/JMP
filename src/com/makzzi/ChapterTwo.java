@@ -581,40 +581,29 @@ public class ChapterTwo {
         printMatrix(transpose);
     }
 
-    public void determinantMatrix() {
-        int[][] matrix = getMatrixNxN();
-        System.out.println();
-        int sum = 0;
+    public void determinantSarrusRule(int[][] matrix) {
+        int result = 0;
         for (int column = 0; column < matrix.length; column++) {
-            int m = 1;
-            for (int row = 0, sub = column; row < matrix.length; row++) {
-                System.out.printf("%d ", matrix[row][sub]);
-                m *= matrix[row][sub];
-                sub++;
-                if (sub > matrix.length-1) sub -= matrix.length;
-
+            int multiplication = 1;
+            for (int row = 0, below = column; row < matrix.length; row++) {
+                multiplication *= matrix[row][below];
+                below++;
+                if (below > matrix.length-1) below -= matrix.length;
             }
-            sum += m;
-            if (column != matrix.length-1) System.out.print(" +  ");
+            result += multiplication;
         }
-        System.out.println(" = " + sum);
-
-        int div = 0;
         for (int column = 0; column < matrix.length; column++) {
-            int m = 1;
-            for (int row = matrix.length-1, sub = column; row >= 0; row--) {
-                System.out.printf("%d ", matrix[row][sub]);
-                m *= matrix[row][sub];
-                sub++;
-                if (sub > matrix.length-1) sub -= matrix.length;
-
+            int multiplication = 1;
+            for (int row = matrix.length-1, below = column; row >= 0; row--) {
+                multiplication *= matrix[row][below];
+                below++;
+                if (below > matrix.length-1) below -= matrix.length;
             }
-            div += m;
-            if (column != matrix.length-1) System.out.print(" +  ");
+            result -= multiplication;
         }
-        System.out.println(" = " + div);
-        System.out.printf("The determinant of the matrix: %d%n", (sum - div));
+        System.out.printf("%nThe determinant of the matrix: %d%n", result);
     }
+
 
     private int[][] cutMatrix(int[][] matrix, int rowCut, int columnCut) {
         int[][] piece = new int[matrix.length-rowCut-1][matrix.length-rowCut-1];
