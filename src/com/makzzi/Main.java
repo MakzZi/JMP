@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         //ConsoleOperation createArray = new ConsoleOperation();
-        ChapterTwo chapterTwo = new ChapterTwo();
+        //ChapterTwo chapterTwo = new ChapterTwo();
         //String[] arrayNums = createArray.createNumberArray();
         //2.1.a//chapterTwo.showShortLongNumberInArray(arrayNums);
         //2.2.a//chapterTwo.showSortedArrayByLengthOfNumber(arrayNums);
@@ -25,10 +25,9 @@ public class Main {
         //2.3.c//chapterTwo.largestNumberElementsMatrixInAscendingOrder();
         //2.4.c//chapterTwo.sumBetweenFirstPositiveTwoNumbersInLine();
         //2.5.c//chapterTwo.transposeMatrix();
-        //chapterTwo.determinantMatrix();
-        int[][] matrix = {{1,2,3,10},{4,5,6,11},{7,8,9,12},{16,15,14,13}};
-        chapterTwo.printMatrix(matrix);
-        chapterTwo.fractionMatrix(matrix);
+        //2.8.c//chapterTwo.showDeterminantMatrix();
+
     }
+
 
 }

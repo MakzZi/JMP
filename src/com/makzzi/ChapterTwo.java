@@ -352,7 +352,7 @@ public class ChapterTwo {
         return matrix;
     }
 
-    public void printMatrix(int[][] matrix) {
+    private void printMatrix(int[][] matrix) {
         int n = matrix.length;
         int lengthN = Integer.toString(-n).length()+3;
         int lengthNumber;
@@ -581,7 +581,7 @@ public class ChapterTwo {
         printMatrix(transpose);
     }
 
-    public void determinantSarrusRule(int[][] matrix) {
+    private int determinantSarrusRule(int[][] matrix) {
         int result = 0;
         for (int column = 0; column < matrix.length; column++) {
             int multiplication = 1;
@@ -601,14 +601,14 @@ public class ChapterTwo {
             }
             result -= multiplication;
         }
-        System.out.printf("%nThe determinant of the matrix: %d%n", result);
+        return result;
     }
 
 
     private int[][] cutMatrix(int[][] matrix, int rowCut, int columnCut) {
         int[][] piece = new int[matrix.length-rowCut-1][matrix.length-rowCut-1];
         for (int row = rowCut+1; row < matrix.length; row++) {
-            for (int column = matrix.length-piece.length, columnPiece = 0; column < matrix.length; column++, columnPiece++) {
+            for (int column = matrix.length-piece.length-1, columnPiece = 0; column < matrix.length; column++, columnPiece++) {
                 if (column != columnCut)
                     piece[row-(rowCut+1)][columnPiece] = matrix[row][column];
                 else
@@ -618,13 +618,25 @@ public class ChapterTwo {
         return piece;
     }
 
-    public void fractionMatrix(int[][] matrix) {
-        System.out.println();
-        for (int row = 0; row < matrix.length; row++) {
-                for (int column = 0; column < matrix.length; column++) {
-
-                }
+    private int detMatrixLaplace(int[][] matrix) {
+        int result = 0;
+        for (int column = 0; column < matrix.length; column++) {
+            int[][] cut = cutMatrix(matrix, 0, column);
+            if (column % 2 != 0 && column != 0) matrix[0][column] *= -1;
+            if (cut.length != 2)
+                result += detMatrixLaplace(cut) * matrix[0][column];
+            else
+                result +=  matrix[0][column]*(cut[0][0] * cut[1][1] - cut[0][1] * cut[1][0]);
         }
+        return result;
+    }
+
+    public void showDeterminantMatrix() {
+        System.out.print("Enter N: ");
+        int n = new ConsoleUtils().getInt();
+        int[][] matrix = createMatrixNxN(n);
+        printMatrix(matrix);
+        System.out.printf("%nDeterminant matrix %d x %d = %d%n", n, n, detMatrixLaplace(matrix));
     }
 
 }
