@@ -25,6 +25,7 @@ public class Main {
         //2.3.c//chapterTwo.largestNumberElementsMatrixInAscendingOrder();
         //2.4.c//chapterTwo.sumBetweenFirstPositiveTwoNumbersInLine();
         //2.5.c//chapterTwo.transposeMatrix();
+        //2.6.c//chapterTwo.showNormMatrix();
     }
 
 }

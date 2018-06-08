@@ -373,12 +373,9 @@ public class ChapterTwo {
         }
     }
 
-
-
     public int[][] getMatrixNxN() {
         System.out.print("Enter N: ");
-        ConsoleUtils getN = new ConsoleUtils();
-        int n = getN.getInt();
+        int n = new ConsoleUtils().getInt();
         int[][] matrix = createMatrixNxN(n);
         printMatrix(matrix);
         return matrix;
@@ -579,6 +576,35 @@ public class ChapterTwo {
                 transpose[column][row] = matrix[row][column];
         System.out.println("Transpose:");
         printMatrix(transpose);
+    }
+
+    private int normMatrixRow(int[][] matrix) {
+        int result = matrix[0][0];
+        for (int row = 0; row < matrix.length; row++) {
+            int rowSum = 0;
+            for (int column = 0; column < matrix.length; column++)
+                rowSum += Math.abs(matrix[row][column]);
+            if (result < rowSum) result = rowSum;
+        }
+        return result;
+    }
+
+    private int normMatrixColumn(int[][] matrix) {
+        int result = matrix[0][0];
+        for (int column = 0; column < matrix.length; column++) {
+            int columnSum = 0;
+            for (int row = 0; row < matrix.length; row++)
+                columnSum += Math.abs(matrix[row][column]);
+            if (result < columnSum) result = columnSum;
+        }
+        return result;
+    }
+
+    public void showNormMatrix() {
+        int[][] matrix = getMatrixNxN();
+        int normRow = normMatrixRow(matrix);
+        int normColumn = normMatrixColumn(matrix);
+        System.out.printf("Row-norm matrix: %d%nColumn-norm matrix: %d%n", normRow, normColumn);
     }
 
 }
