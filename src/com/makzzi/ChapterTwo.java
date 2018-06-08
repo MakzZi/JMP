@@ -352,7 +352,7 @@ public class ChapterTwo {
         return matrix;
     }
 
-    private void printMatrix(int[][] matrix) {
+    public void printMatrix(int[][] matrix) {
         int n = matrix.length;
         int lengthN = Integer.toString(-n).length()+3;
         int lengthNumber;
@@ -605,6 +605,55 @@ public class ChapterTwo {
         int normRow = normMatrixRow(matrix);
         int normColumn = normMatrixColumn(matrix);
         System.out.printf("Row-norm matrix: %d%nColumn-norm matrix: %d%n", normRow, normColumn);
+    }
+
+    private int[][] rotateLeftMatrix(int[][] matrix) {
+        int[][] rotate = new int[matrix.length][matrix.length];
+        for (int row = 0; row < matrix.length; row++)
+            for (int column = matrix.length-1; column >= 0; column--)
+                rotate[matrix.length-1-column][row] = matrix[row][column];
+        return rotate;
+    }
+
+    private int[][] rotateRightMatrix(int[][] matrix) {
+        int[][] rotate = new int[matrix.length][matrix.length];
+        for (int row = matrix.length-1; row >= 0; row--)
+            for (int column = 0; column < matrix.length; column++)
+                rotate[column][matrix.length-1-row] = matrix[row][column];
+        return rotate;
+    }
+
+    public void showRotateMatrix(boolean clockwise) {
+        int[][] matrix = getMatrixNxN();
+        System.out.println("Choose number:\n1 or any - 90\'\n2 - 180\'\n3 - 270\'");
+        int num = new ConsoleUtils().getInt();
+        if (clockwise)
+            switch(num) {
+                case 2:
+                    matrix = rotateRightMatrix(matrix);
+                    matrix = rotateRightMatrix(matrix);
+                    break;
+                case 3:
+                    matrix = rotateLeftMatrix(matrix);
+                    break;
+                default:
+                    matrix = rotateRightMatrix(matrix);
+                    break;
+            }
+        else
+            switch(num) {
+                case 2:
+                    matrix = rotateLeftMatrix(matrix);
+                    matrix = rotateLeftMatrix(matrix);
+                    break;
+                case 3:
+                    matrix = rotateRightMatrix(matrix);
+                    break;
+                default:
+                    matrix = rotateLeftMatrix(matrix);
+                    break;
+            }
+        printMatrix(matrix);
     }
 
 }

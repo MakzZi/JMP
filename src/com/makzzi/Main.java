@@ -26,6 +26,8 @@ public class Main {
         //2.4.c//chapterTwo.sumBetweenFirstPositiveTwoNumbersInLine();
         //2.5.c//chapterTwo.transposeMatrix();
         //2.6.c//chapterTwo.showNormMatrix();
+        //2.7.c//chapterTwo.showRotateMatrix(true);
+
     }
 
 }
