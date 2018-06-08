@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         //ConsoleOperation createArray = new ConsoleOperation();
-        //ChapterTwo chapterTwo = new ChapterTwo();
+        ChapterTwo chapterTwo = new ChapterTwo();
         //String[] arrayNums = createArray.createNumberArray();
         //2.1.a//chapterTwo.showShortLongNumberInArray(arrayNums);
         //2.2.a//chapterTwo.showSortedArrayByLengthOfNumber(arrayNums);

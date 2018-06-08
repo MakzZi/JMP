@@ -352,7 +352,7 @@ public class ChapterTwo {
         return matrix;
     }
 
-    private void printMatrix(int[][] matrix) {
+    public void printMatrix(int[][] matrix) {
         int n = matrix.length;
         int lengthN = Integer.toString(-n).length()+3;
         int lengthNumber;
@@ -360,6 +360,27 @@ public class ChapterTwo {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 number = Integer.toString(matrix[i][j]);
+                lengthNumber = number.length();
+                if (number.charAt(0) != '-') {
+                    number = " " + number;
+                    lengthNumber++;
+                }
+                for (int s = 0; s < lengthN - lengthNumber; s++)
+                    number += " ";
+                System.out.print(number);
+            }
+            System.out.println();
+        }
+    }
+
+    public void printMatrix(double[][] matrix) {
+        int n = matrix.length;
+        int lengthN = Integer.toString(-n).length()+3;
+        int lengthNumber;
+        String number;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                number = Double.toString(matrix[i][j]);
                 lengthNumber = number.length();
                 if (number.charAt(0) != '-') {
                     number = " " + number;
@@ -618,15 +639,16 @@ public class ChapterTwo {
         return piece;
     }
 
-    private int detMatrixLaplace(int[][] matrix) {
+    public int detMatrixLaplace(int[][] matrix) {
         int result = 0;
         for (int column = 0; column < matrix.length; column++) {
+            int index = matrix[0][column];
             int[][] cut = cutMatrix(matrix, 0, column);
-            if (column % 2 != 0 && column != 0) matrix[0][column] *= -1;
+            if (column % 2 != 0 && column != 0) index *= -1;
             if (cut.length != 2)
-                result += detMatrixLaplace(cut) * matrix[0][column];
+                result += index * detMatrixLaplace(cut);
             else
-                result +=  matrix[0][column]*(cut[0][0] * cut[1][1] - cut[0][1] * cut[1][0]);
+                result +=  index * (cut[0][0] * cut[1][1] - cut[0][1] * cut[1][0]);
         }
         return result;
     }
@@ -638,5 +660,21 @@ public class ChapterTwo {
         printMatrix(matrix);
         System.out.printf("%nDeterminant matrix %d x %d = %d%n", n, n, detMatrixLaplace(matrix));
     }
+
+    public int detMatrixGaussianElimination(double[][] matrix) {
+        double result = matrix[0][0];
+        int dgnlRow = 0;
+        while (dgnlRow < matrix.length-1) {
+            for (int row = dgnlRow+1; row < matrix.length; row++) {
+                double multiplier = matrix[row][dgnlRow] / matrix[dgnlRow][dgnlRow];
+                for (int column = dgnlRow; column < matrix.length; column++)
+                    matrix[row][column] -=  multiplier * matrix[dgnlRow][column];
+            }
+            dgnlRow++;
+            result *= matrix[dgnlRow][dgnlRow];
+        }
+        return (int)Math.round(result);
+    }
+
 
 }

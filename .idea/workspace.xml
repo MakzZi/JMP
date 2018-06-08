@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f4cdca0-02fc-4a4b-b858-899eabb5ab6d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/makzzi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/makzzi/Main.java" afterDir="false" />
     </list>
@@ -20,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="411">
-              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -46,8 +45,8 @@
       <file leaf-file-name="ChapterTwo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="635" column="44" lean-forward="true" selection-start-line="635" selection-start-column="44" selection-end-line="635" selection-end-column="44" />
+            <state relative-caret-position="380">
+              <caret line="670" column="44" selection-start-line="670" selection-start-column="44" selection-end-line="670" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -60,6 +59,12 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>printMatr</find>
+      <find>printMatri</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -597,15 +602,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="635" column="44" lean-forward="true" selection-start-line="635" selection-start-column="44" selection-end-line="635" selection-end-column="44" />
+        <state relative-caret-position="380">
+          <caret line="670" column="44" selection-start-line="670" selection-start-column="44" selection-end-line="670" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
         </state>
       </provider>
     </entry>
