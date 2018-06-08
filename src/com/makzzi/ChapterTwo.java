@@ -373,6 +373,27 @@ public class ChapterTwo {
         }
     }
 
+    public void printMatrix(double[][] matrix) {
+        int n = matrix.length;
+        int lengthN = Integer.toString(-n).length()+3;
+        int lengthNumber;
+        String number;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                number = Double.toString(matrix[i][j]);
+                lengthNumber = number.length();
+                if (number.charAt(0) != '-') {
+                    number = " " + number;
+                    lengthNumber++;
+                }
+                for (int s = 0; s < lengthN - lengthNumber; s++)
+                    number += " ";
+                System.out.print(number);
+            }
+            System.out.println();
+        }
+    }
+
     public int[][] getMatrixNxN() {
         System.out.print("Enter N: ");
         int n = new ConsoleUtils().getInt();
@@ -600,6 +621,29 @@ public class ChapterTwo {
         return result;
     }
 
+    private int determinantSarrusRule(int[][] matrix) {
+        int result = 0;
+        for (int column = 0; column < matrix.length; column++) {
+            int multiplication = 1;
+            for (int row = 0, below = column; row < matrix.length; row++) {
+                multiplication *= matrix[row][below];
+                below++;
+                if (below > matrix.length-1) below -= matrix.length;
+            }
+            result += multiplication;
+        }
+        for (int column = 0; column < matrix.length; column++) {
+            int multiplication = 1;
+            for (int row = matrix.length-1, below = column; row >= 0; row--) {
+                multiplication *= matrix[row][below];
+                below++;
+                if (below > matrix.length-1) below -= matrix.length;
+            }
+            result -= multiplication;
+        }
+        return result;
+    }
+
     public void showNormMatrix() {
         int[][] matrix = getMatrixNxN();
         int normRow = normMatrixRow(matrix);
@@ -654,6 +698,56 @@ public class ChapterTwo {
                     break;
             }
         printMatrix(matrix);
+    }
+
+    private int[][] cutMatrix(int[][] matrix, int rowCut, int columnCut) {
+        int[][] piece = new int[matrix.length-rowCut-1][matrix.length-rowCut-1];
+        for (int row = rowCut+1; row < matrix.length; row++) {
+            for (int column = matrix.length-piece.length-1, columnPiece = 0; column < matrix.length; column++, columnPiece++) {
+                if (column != columnCut)
+                    piece[row-(rowCut+1)][columnPiece] = matrix[row][column];
+                else
+                    columnPiece--;
+            }
+        }
+        return piece;
+    }
+
+    public int detMatrixLaplace(int[][] matrix) {
+        int result = 0;
+        for (int column = 0; column < matrix.length; column++) {
+            int index = matrix[0][column];
+            int[][] cut = cutMatrix(matrix, 0, column);
+            if (column % 2 != 0 && column != 0) index *= -1;
+            if (cut.length != 2)
+                result += index * detMatrixLaplace(cut);
+            else
+                result +=  index * (cut[0][0] * cut[1][1] - cut[0][1] * cut[1][0]);
+        }
+        return result;
+    }
+
+    public void showDeterminantMatrix() {
+        System.out.print("Enter N: ");
+        int n = new ConsoleUtils().getInt();
+        int[][] matrix = createMatrixNxN(n);
+        printMatrix(matrix);
+        System.out.printf("%nDeterminant matrix %d x %d = %d%n", n, n, detMatrixLaplace(matrix));
+    }
+
+    public int detMatrixGaussianElimination(double[][] matrix) {
+        double result = matrix[0][0];
+        int dgnlRow = 0;
+        while (dgnlRow < matrix.length-1) {
+            for (int row = dgnlRow+1; row < matrix.length; row++) {
+                double multiplier = matrix[row][dgnlRow] / matrix[dgnlRow][dgnlRow];
+                for (int column = dgnlRow; column < matrix.length; column++)
+                    matrix[row][column] -=  multiplier * matrix[dgnlRow][column];
+            }
+            dgnlRow++;
+            result *= matrix[dgnlRow][dgnlRow];
+        }
+        return (int)Math.round(result);
     }
 
 }

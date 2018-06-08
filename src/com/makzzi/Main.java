@@ -27,7 +27,7 @@ public class Main {
         //2.5.c//chapterTwo.transposeMatrix();
         //2.6.c//chapterTwo.showNormMatrix();
         //2.7.c//chapterTwo.showRotateMatrix(true);
-
+        //2.8.c//chapterTwo.showDeterminantMatrix();
     }
 
 }
