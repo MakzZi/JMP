@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6f4cdca0-02fc-4a4b-b858-899eabb5ab6d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/makzzi/ConsoleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/makzzi/ConsoleUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/makzzi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/makzzi/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,8 +19,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+            <state relative-caret-position="530">
+              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -36,8 +37,8 @@
       <file leaf-file-name="ConsoleUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/ConsoleUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+            <state relative-caret-position="255">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -45,8 +46,8 @@
       <file leaf-file-name="ChapterTwo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-449">
-              <caret line="376" column="22" lean-forward="true" selection-start-line="376" selection-start-column="22" selection-end-line="376" selection-end-column="22" />
+            <state relative-caret-position="462">
+              <caret line="867" column="64" selection-start-line="867" selection-start-column="64" selection-end-line="867" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,7 +71,11 @@
       <find>get</find>
       <find>printM</find>
       <find>printMa</find>
+      <find>showMatrix</find>
       <find>printMatr</find>
+      <find>move</find>
+      <find>getInt</find>
+      <find>place</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -582,15 +587,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/ConsoleUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="255">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/ChapterTwo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-449">
-          <caret line="376" column="22" lean-forward="true" selection-start-line="376" selection-start-column="22" selection-end-line="376" selection-end-column="22" />
+        <state relative-caret-position="462">
+          <caret line="867" column="64" selection-start-line="867" selection-start-column="64" selection-end-line="867" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -599,8 +604,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/makzzi/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        <state relative-caret-position="530">
+          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
         </state>
       </provider>
     </entry>

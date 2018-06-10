@@ -258,44 +258,16 @@ public class ChapterTwo {
     }
 
     public void showMatrix(int k) {
-        double dN = Math.sqrt(k);
-        int n = (int)dN;
-        if (dN*dN != n*n) n++;
-        int num = 1;
-        int lengthLastNumber = Integer.toString(k).length();
-        for (int i = 1; i <= k / n; i++) {
-            for (int j = 1; j <= n; j++) {
-                System.out.print(printFixedLength(Integer.toString(num), lengthLastNumber));
-                num++;
-            }
-            System.out.println();
-        }
-        for (int j = 1; j <= n; j++) {
-            if (num <= k)
-            {
-                System.out.print(printFixedLength(Integer.toString(num), lengthLastNumber));
-                num++;
-            }
-            else {
-                System.out.print(printFixedLength("0", lengthLastNumber));
-                num++;
-            }
-        }
-    }
-
-    public void showMatrixNB(int k) {
-        double dN = Math.sqrt(k);
-        int n = (int)dN;
-        if (dN*dN != n*n) n++;
+        int n = (int)Math.round(Math.sqrt(k));
+        if (n*n <= k) n++;
         int[][] matrix = new int[n][n];
-        int count = 1;
-        for (int i = 0; i < n && count <= k; i++) {
+        for (int i = 0, count = 1; i < n && count <= k; i++) {
             for (int j = 0; j < n && count <= k; j++) {
                 matrix[i][j] = count;
                 count++;
             }
-            System.out.println(Arrays.toString(matrix[i]));
         }
+        printMatrix(matrix);
     }
 
     public void quadraticEquation() {
@@ -793,9 +765,9 @@ public class ChapterTwo {
 
     public void deleteMaxElementWithRowColumn() {
         int[][] matrix = getMatrixNxN();
-        int maxElement = matrix[0][0];
         int delRow = 0;
         int delColumn = 0;
+        int maxElement = matrix[delRow][delColumn];
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0; column < matrix.length; column++) {
                 if (maxElement < matrix[row][column]) {
@@ -861,6 +833,46 @@ public class ChapterTwo {
         int[][] matrix = getMatrixNxN();
         System.out.println("Trim matrix:");
         printMatrix(trimMatrix(matrix));
+    }
+
+    private int[][] moveRow(int[][] matrix, int rowA, int rowB) {
+        int[] tmp = matrix[rowA];
+        matrix[rowA] = matrix[rowB];
+        matrix[rowB] = tmp;
+        return matrix;
+    }
+
+    private int[][] moveColumn(int[][] matrix, int columnA, int columnB) {
+        for (int row = 0, tmp; row < matrix.length; row++) {
+            tmp = matrix[row][columnA];
+            matrix[row][columnA] = matrix[row][columnB];
+            matrix[row][columnB] = tmp;
+        }
+        return matrix;
+    }
+
+    public void replaceMinElementMatrix() {
+        int[][] matrix = getMatrixNxN();
+        int minRow = 0;
+        int minColumn = 0;
+        int min = matrix[minRow][minColumn];
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix.length; column++) {
+                if (min > matrix[row][column]) {
+                    min = matrix[row][column];
+                    minRow = row;
+                    minColumn = column;
+                }
+            }
+        }
+        System.out.print("Select an item to replace\nEnter row: ");
+        int selectRow = new ConsoleUtils().getInt(matrix.length);
+        System.out.print("Enter column: ");
+        int selectColumn = new ConsoleUtils().getInt(matrix.length);
+        matrix = moveRow(matrix, minRow, selectRow);
+        matrix = moveColumn(matrix, minColumn, selectColumn);
+        System.out.println("Changed matrix:");
+        printMatrix(matrix);
     }
 
 }

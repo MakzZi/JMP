@@ -31,7 +31,7 @@ public class Main {
         //2.9.c//chapterTwo.showMatrixSubtractionAverageElement();
         //2.10.c//chapterTwo.deleteMaxElementWithRowColumn();
         //2.11.c//chapterTwo.showTrimMatrix();
-
+        //2.12.c//chapterTwo.replaceMinElementMatrix();
     }
 
 }

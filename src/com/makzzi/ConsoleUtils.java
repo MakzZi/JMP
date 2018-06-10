@@ -13,6 +13,15 @@ public class ConsoleUtils {
         return getInt();
     }
 
+    public int getInt(int range) {
+        Scanner scan = new Scanner(System.in);
+        if (scan.hasNextInt()) {
+            int i = scan.nextInt();
+            if (i < range) return i;
+        }
+        return getInt();
+    }
+
     public int[] getIntArray(int lengthArray) {
         lengthArray = Math.abs(lengthArray);
         if (lengthArray < 0) lengthArray = 0;
