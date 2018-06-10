@@ -352,13 +352,12 @@ public class ChapterTwo {
     }
 
     public void printMatrix(int[][] matrix) {
-        int n = matrix.length;
-        int lengthN = Integer.toString(-n).length()+3;
+        int lengthN = Integer.toString(-matrix[0].length).length()+3;
         int lengthNumber;
         String number;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                number = Integer.toString(matrix[i][j]);
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[0].length; column++) {
+                number = Integer.toString(matrix[row][column]);
                 lengthNumber = number.length();
                 if (number.charAt(0) != '-') {
                     number = " " + number;
@@ -373,13 +372,12 @@ public class ChapterTwo {
     }
 
     public void printMatrix(double[][] matrix) {
-        int n = matrix.length;
-        int lengthN = Integer.toString(-n).length()+3;
+        int lengthN = Integer.toString(-matrix[0].length).length()+3;
         int lengthNumber;
         String number;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                number = Double.toString(matrix[i][j]);
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[0].length; column++) {
+                number = Double.toString(matrix[row][column]);
                 lengthNumber = number.length();
                 if (number.charAt(0) != '-') {
                     number = " " + number;
@@ -829,6 +827,40 @@ public class ChapterTwo {
         int[][] matrix = getMatrixNxN();
         System.out.println("Matrix:");
         printMatrix(matrixSubtractionAverageElement(matrix));
+    }
+
+    private int[][] trimMatrix(int[][] matrix) {
+        for (int row = 0; row < matrix.length; row++) {
+            boolean delete = true;
+            for (int column = 0; column < matrix[0].length; column++) {
+                if (matrix[row][column] != 0) {
+                    delete = false;
+                    break;
+                }
+            }
+            if (delete) {
+                matrix = delRow(matrix, row);
+            }
+        }
+        for (int column = 0; column < matrix[0].length; column++) {
+            boolean delete = true;
+            for (int row = 0; row < matrix.length; row++) {
+                if (matrix[row][column] != 0) {
+                    delete = false;
+                    break;
+                }
+            }
+            if (delete) {
+                matrix = delColumn(matrix, column);
+            }
+        }
+        return matrix;
+    }
+
+    public void showTrimMatrix() {
+        int[][] matrix = getMatrixNxN();
+        System.out.println("Trim matrix:");
+        printMatrix(trimMatrix(matrix));
     }
 
 }

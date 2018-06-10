@@ -30,6 +30,7 @@ public class Main {
         //2.8.c//chapterTwo.showDeterminantMatrix();
         //2.9.c//chapterTwo.showMatrixSubtractionAverageElement();
         //2.10.c//chapterTwo.deleteMaxElementWithRowColumn();
+        //2.11.c//chapterTwo.showTrimMatrix();
 
     }
 
