@@ -1,6 +1,5 @@
 package com.makzzi;
 
-import javax.naming.NameNotFoundException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -748,6 +747,68 @@ public class ChapterTwo {
             result *= matrix[dgnlRow][dgnlRow];
         }
         return (int)Math.round(result);
+    }
+
+    private int[][] delRow(int[][] matrix, int deleteRow) {
+        int[][] result = new int[matrix.length-1][matrix[0].length];
+        for (int rowMatrix = 0, rowResult = 0; rowMatrix < matrix.length; rowMatrix++, rowResult++) {
+            if (rowMatrix != deleteRow)
+                result[rowResult] = matrix[rowMatrix];
+            else
+                rowResult--;
+        }
+        return result;
+    }
+
+    private int[][] delColumn(int[][] matrix, int deleteColumn) {
+        int[][] result = new int[matrix.length][matrix[0].length-1];
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0, columnResult = 0; column < matrix[0].length; column++, columnResult++) {
+                if (column != deleteColumn)
+                    result[row][columnResult] = matrix[row][column];
+                else
+                    columnResult--;
+            }
+        }
+        return result;
+    }
+
+    private int[][] delRowColumn(int[][] matrix, int deleteRow, int deleteColumn) {
+        int[][] piece = new int[matrix.length-1][matrix.length-1];
+        for (int row = 0, rowPiece = 0; row < matrix.length; row++, rowPiece++) {
+            if (row != deleteRow) {
+                for (int column = 0, columnPiece = 0; column < matrix.length; column++, columnPiece++) {
+                    if (column != deleteColumn) {
+                        piece[rowPiece][columnPiece] = matrix[row][column];
+                    }
+                    else {
+                        columnPiece--;
+                    }
+                }
+            }
+            else {
+                rowPiece--;
+            }
+        }
+        return piece;
+    }
+
+    public void deleteMaxElementWithRowColumn() {
+        int[][] matrix = getMatrixNxN();
+        int maxElement = matrix[0][0];
+        int delRow = 0;
+        int delColumn = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix.length; column++) {
+                if (maxElement < matrix[row][column]) {
+                    maxElement = matrix[row][column];
+                    delRow = row;
+                    delColumn = column;
+                }
+            }
+        }
+        System.out.println("Matrix with a deleted row and column:");
+        printMatrix(delRowColumn(matrix, delRow, delColumn));
     }
 
 }
