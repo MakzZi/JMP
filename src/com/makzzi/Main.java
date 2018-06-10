@@ -28,8 +28,9 @@ public class Main {
         //2.6.c//chapterTwo.showNormMatrix();
         //2.7.c//chapterTwo.showRotateMatrix(true);
         //2.8.c//chapterTwo.showDeterminantMatrix();
-        //2.9.c//chapterTwo.deleteMaxElementWithRowColumn();
-        
+        //2.9.c//chapterTwo.showMatrixSubtractionAverageElement();
+        //2.10.c//chapterTwo.deleteMaxElementWithRowColumn();
+
     }
 
 }

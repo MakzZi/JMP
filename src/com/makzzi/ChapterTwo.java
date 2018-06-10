@@ -811,4 +811,24 @@ public class ChapterTwo {
         printMatrix(delRowColumn(matrix, delRow, delColumn));
     }
 
+    private int[][] matrixSubtractionAverageElement(int[][] matrix) {
+        for (int row = 0; row < matrix.length; row++) {
+            int average = 0;
+            for (int column = 0; column < matrix.length; column++) {
+                average += Math.abs(matrix[row][column]);
+            }
+            average /= matrix.length;
+            for (int column = 0; column < matrix.length; column++) {
+                matrix[row][column] = Math.round(matrix[row][column] - average);
+            }
+        }
+        return matrix;
+    }
+
+    public void showMatrixSubtractionAverageElement() {
+        int[][] matrix = getMatrixNxN();
+        System.out.println("Matrix:");
+        printMatrix(matrixSubtractionAverageElement(matrix));
+    }
+
 }
