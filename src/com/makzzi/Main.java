@@ -32,6 +32,7 @@ public class Main {
         //2.10.c//chapterTwo.deleteMaxElementWithRowColumn();
         //2.11.c//chapterTwo.showTrimMatrix();
         //2.12.c//chapterTwo.replaceMinElementMatrix();
+        //2.13.c//chapterTwo.zeroAtTheEnd();
     }
 
 }

@@ -875,4 +875,20 @@ public class ChapterTwo {
         printMatrix(matrix);
     }
 
+    public void zeroAtTheEnd() {
+        int[][] matrix = getMatrixNxN();
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0, end = matrix[0].length-1; column < end; column++) {
+                if (matrix[row][column] == 0) {
+                    matrix[row][column] = matrix[row][end];
+                    matrix[row][end] = 0;
+                    end--;
+                    column--;
+                }
+            }
+        }
+        System.out.println("Result matrix:");
+        printMatrix(matrix);
+    }
+
 }
