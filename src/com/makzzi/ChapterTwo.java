@@ -910,4 +910,27 @@ public class ChapterTwo {
         printMatrix(roundElementsMatrix(matrix));
     }
 
+    public void showSaddleElementsMatrix() {
+        int[][] matrix = getMatrixInt();
+        System.out.print("Saddle: ");
+        for (int row = 0; row < matrix.length; row++) {
+            int minRow = row;
+            int minColumn = 0;
+            for (int column = 0; column < matrix[0].length; column++) {
+                if (matrix[row][column] < matrix[minRow][minColumn]) {
+                    minRow = row;
+                    minColumn = column;
+                }
+            }
+            boolean saddle = true;
+            for (int maxRow = 0; maxRow < matrix.length; maxRow++) {
+                if (matrix[minRow][minColumn] < matrix[maxRow][minColumn]) {
+                    saddle = false;
+                    break;
+                }
+            }
+            if (saddle) System.out.printf("%d  ", matrix[minRow][minColumn]);
+        }
+    }
+
 }
