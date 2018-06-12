@@ -314,12 +314,22 @@ public class ChapterTwo {
         System.out.println(month(number));
     }
 
-    private int[][] createMatrixNxN(int n) {
+    private int[][] createMatrixInt(int n) {
         int[][] matrix = new int[n][n];
         Random rnd = new Random();
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 matrix[i][j] = rnd.nextInt(n*2+1)-n;
+        return matrix;
+    }
+
+    private double[][] createMatrixDouble(int n) {
+        double[][] matrix = new double[n][n];
+        Random rnd = new Random();
+        double range = n*2+1;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                matrix[i][j] = rnd.nextInt(n*2)-n + rnd.nextDouble();
         return matrix;
     }
 
@@ -344,29 +354,22 @@ public class ChapterTwo {
     }
 
     public void printMatrix(double[][] matrix) {
-        int lengthN = Integer.toString(-matrix[0].length).length()+3;
-        int lengthNumber;
-        String number;
-        for (int row = 0; row < matrix.length; row++) {
-            for (int column = 0; column < matrix[0].length; column++) {
-                number = Double.toString(matrix[row][column]);
-                lengthNumber = number.length();
-                if (number.charAt(0) != '-') {
-                    number = " " + number;
-                    lengthNumber++;
-                }
-                for (int s = 0; s < lengthN - lengthNumber; s++)
-                    number += " ";
-                System.out.print(number);
-            }
-            System.out.println();
-        }
+        for (int row = 0; row < matrix.length; row++)
+            System.out.println(Arrays.toString(matrix[row]));
     }
 
-    public int[][] getMatrixNxN() {
+    public int[][] getMatrixInt() {
         System.out.print("Enter N: ");
         int n = new ConsoleUtils().getInt();
-        int[][] matrix = createMatrixNxN(n);
+        int[][] matrix = createMatrixInt(n);
+        printMatrix(matrix);
+        return matrix;
+    }
+
+    public double[][] getMatrixDouble() {
+        System.out.print("Enter N: ");
+        int n = new ConsoleUtils().getInt();
+        double[][] matrix = createMatrixDouble(n);
         printMatrix(matrix);
         return matrix;
     }
@@ -469,7 +472,7 @@ public class ChapterTwo {
     }
 
     public void moveMatrix() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         ConsoleUtils consoleUtils = new ConsoleUtils();
         System.out.print("How much to the RIGHT? : ");
         int k = consoleUtils.getInt();
@@ -495,7 +498,7 @@ public class ChapterTwo {
     }
 
     public void largestNumberElementsMatrixInAscendingOrder() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         int ascending = 0;
         int descending = 0;
         for (int row = 0; row < matrix.length; row++) {
@@ -535,7 +538,7 @@ public class ChapterTwo {
     }
 
     public void sumBetweenFirstPositiveTwoNumbersInLine() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         int total = 0;
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0; column < matrix.length; column++) {
@@ -559,7 +562,7 @@ public class ChapterTwo {
     }
 
     public void transposeMatrix() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         int[][] transpose = new int[matrix.length][matrix.length];
         for (int row = 0; row < matrix.length; row++)
             for (int column = 0; column < matrix.length; column++)
@@ -614,7 +617,7 @@ public class ChapterTwo {
     }
 
     public void showNormMatrix() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         int normRow = normMatrixRow(matrix);
         int normColumn = normMatrixColumn(matrix);
         System.out.printf("Row-norm matrix: %d%nColumn-norm matrix: %d%n", normRow, normColumn);
@@ -637,7 +640,7 @@ public class ChapterTwo {
     }
 
     public void showRotateMatrix(boolean clockwise) {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         System.out.println("Choose number:\n1 or any - 90\'\n2 - 180\'\n3 - 270\'");
         int num = new ConsoleUtils().getInt();
         if (clockwise)
@@ -699,7 +702,7 @@ public class ChapterTwo {
     public void showDeterminantMatrix() {
         System.out.print("Enter N: ");
         int n = new ConsoleUtils().getInt();
-        int[][] matrix = createMatrixNxN(n);
+        int[][] matrix = createMatrixInt(n);
         printMatrix(matrix);
         System.out.printf("%nDeterminant matrix %d x %d = %d%n", n, n, detMatrixLaplace(matrix));
     }
@@ -764,7 +767,7 @@ public class ChapterTwo {
     }
 
     public void deleteMaxElementWithRowColumn() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         int delRow = 0;
         int delColumn = 0;
         int maxElement = matrix[delRow][delColumn];
@@ -796,8 +799,8 @@ public class ChapterTwo {
     }
 
     public void showMatrixSubtractionAverageElement() {
-        int[][] matrix = getMatrixNxN();
-        System.out.println("Matrix:");
+        int[][] matrix = getMatrixInt();
+        System.out.println("Result matrix:");
         printMatrix(matrixSubtractionAverageElement(matrix));
     }
 
@@ -830,7 +833,7 @@ public class ChapterTwo {
     }
 
     public void showTrimMatrix() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         System.out.println("Trim matrix:");
         printMatrix(trimMatrix(matrix));
     }
@@ -852,7 +855,7 @@ public class ChapterTwo {
     }
 
     public void replaceMinElementMatrix() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         int minRow = 0;
         int minColumn = 0;
         int min = matrix[minRow][minColumn];
@@ -876,7 +879,7 @@ public class ChapterTwo {
     }
 
     public void zeroAtTheEnd() {
-        int[][] matrix = getMatrixNxN();
+        int[][] matrix = getMatrixInt();
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0, end = matrix[0].length-1; column < end; column++) {
                 if (matrix[row][column] == 0) {
@@ -889,6 +892,22 @@ public class ChapterTwo {
         }
         System.out.println("Result matrix:");
         printMatrix(matrix);
+    }
+
+    private int[][] roundElementsMatrix(double[][] matrix) {
+        int[][] result = new int[matrix.length][matrix[0].length];
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[0].length; column++) {
+                result[row][column] = (int)Math.round(matrix[row][column]);
+            }
+        }
+        return result;
+    }
+
+    public void showRoundMatrix() {
+        double[][] matrix = getMatrixDouble();
+        System.out.println("Result matrix:");
+        printMatrix(roundElementsMatrix(matrix));
     }
 
 }
