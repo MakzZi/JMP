@@ -933,4 +933,29 @@ public class ChapterTwo {
         }
     }
 
+    public void showRowMatrixOrderByAscending() {
+        int[][] matrix = getMatrixInt();
+        int[] sums = new int[matrix.length];
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[0].length; column++) {
+                sums[row] += matrix[row][column];
+            }
+            for (int array = row; array > 0; array--) {
+                if (sums[array] < sums[array-1]) {
+                    int tmp = sums[array];
+                    sums[array] = sums[array-1];
+                    sums[array-1] = tmp;
+                    int[] arrayTmp = matrix[row];
+                    matrix[row] = matrix[row-1];
+                    matrix[row-1] = arrayTmp;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+        System.out.println("Result matrix:");
+        printMatrix(matrix);
+    }
+
 }
