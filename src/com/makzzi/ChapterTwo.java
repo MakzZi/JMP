@@ -916,7 +916,7 @@ public class ChapterTwo {
         for (int row = 0; row < matrix.length; row++) {
             int minRow = row;
             int minColumn = 0;
-            for (int column = 0; column < matrix[0].length; column++) {
+            for (int column = 0; column < matrix[row].length; column++) {
                 if (matrix[row][column] < matrix[minRow][minColumn]) {
                     minRow = row;
                     minColumn = column;
@@ -937,7 +937,7 @@ public class ChapterTwo {
         int[][] matrix = getMatrixInt();
         int[] sums = new int[matrix.length];
         for (int row = 0; row < matrix.length; row++) {
-            for (int column = 0; column < matrix[0].length; column++) {
+            for (int column = 0; column < matrix[row].length; column++) {
                 sums[row] += matrix[row][column];
             }
             for (int array = row; array > 0; array--) {
@@ -956,6 +956,46 @@ public class ChapterTwo {
         }
         System.out.println("Result matrix:");
         printMatrix(matrix);
+    }
+
+    private int countLocalMinimums(int[][] matrix) {
+        int count = 0;
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[r].length; c++) {
+                boolean minimum = true;
+                if (r-1 >= 0)
+                    if (matrix[r-1][c] < matrix[r][c])
+                        minimum = false;
+                if (minimum && r-1 >= 0 && c-1 >= 0)
+                    if (matrix[r-1][c-1] < matrix[r][c])
+                        minimum = false;
+                if (minimum && r-1 >= 0 && c+1 < matrix.length)
+                    if (matrix[r-1][c+1] < matrix[r][c])
+                        minimum = false;
+                if (minimum && r+1 < matrix.length)
+                    if (matrix[r+1][c] < matrix[r][c])
+                        minimum = false;
+                if (minimum && r+1 < matrix.length && c-1 >= 0)
+                    if (matrix[r+1][c-1] < matrix[r][c])
+                        minimum = false;
+                if (minimum && r-1 >= 0 && c+1 < matrix.length)
+                    if (matrix[r-1][c+1] < matrix[r][c])
+                        minimum = false;
+                if (minimum && c+1 < matrix.length)
+                    if (matrix[r][c+1] < matrix[r][c])
+                        minimum = false;
+                if (minimum && c-1 >= 0)
+                    if (matrix[r][c-1] < matrix[r][c])
+                        minimum = false;
+                if (minimum) count++;
+            }
+        }
+        return count;
+    }
+
+    public void showCountLocalMinimums() {
+        int[][] matrix = getMatrixInt();
+        System.out.println("Count local minimums: " + countLocalMinimums(matrix));
     }
 
 }
