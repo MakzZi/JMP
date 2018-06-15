@@ -945,9 +945,7 @@ public class ChapterTwo {
                     int tmp = sums[array];
                     sums[array] = sums[array-1];
                     sums[array-1] = tmp;
-                    int[] arrayTmp = matrix[row];
-                    matrix[row] = matrix[row-1];
-                    matrix[row-1] = arrayTmp;
+                    matrix = moveRow(matrix, row-1, row);
                 }
                 else {
                     break;
@@ -1043,6 +1041,30 @@ public class ChapterTwo {
     public void showMinimalFromMaximums() {
         int[][] matrix = getMatrixInt();
         System.out.println("Minimal from maximums: " + minimalFromMaximums(matrix));
+    }
+
+    private int[][] columnMatrixOrderByDescending(int[][] matrix) {
+        int[] sums = new int[matrix.length];
+        for (int column = 0; column < matrix.length; column++) {
+            for (int row = 0; row < matrix.length; row++) {
+                sums[column] += Math.abs(matrix[row][column]);
+            }
+            for (int i = column; i > 0; i--) {
+                if (sums[i-1] < sums[i]) {
+                    int tmp = sums[i-1];
+                    sums[i-1] = sums[i];
+                    sums[i] = tmp;
+                    matrix = moveColumn(matrix, i-1, i);
+                }
+            }
+        }
+        return matrix;
+    }
+
+    public void showColumnMatrixOrderByDescending() {
+        int[][] matrix = getMatrixInt();
+        System.out.println("Result matrix: ");
+        printMatrix(columnMatrixOrderByDescending(matrix));
     }
 
 }
