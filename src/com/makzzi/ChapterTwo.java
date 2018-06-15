@@ -998,4 +998,51 @@ public class ChapterTwo {
         System.out.println("Count local minimums: " + countLocalMinimums(matrix));
     }
 
+    private int minimalFromMaximums(int[][] matrix) {
+        boolean first = true;
+        int max = matrix[0][0];
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[r].length; c++) {
+                boolean maximum = true;
+                if (r-1 >= 0)
+                    if (matrix[r-1][c] > matrix[r][c])
+                        maximum = false;
+                if (maximum && r-1 >= 0 && c-1 >= 0)
+                    if (matrix[r-1][c-1] > matrix[r][c])
+                        maximum = false;
+                if (maximum && r-1 >= 0 && c+1 < matrix.length)
+                    if (matrix[r-1][c+1] > matrix[r][c])
+                        maximum = false;
+                if (maximum && r+1 < matrix.length)
+                    if (matrix[r+1][c] > matrix[r][c])
+                        maximum = false;
+                if (maximum && r+1 < matrix.length && c-1 >= 0)
+                    if (matrix[r+1][c-1] > matrix[r][c])
+                        maximum = false;
+                if (maximum && r-1 >= 0 && c+1 < matrix.length)
+                    if (matrix[r-1][c+1] > matrix[r][c])
+                        maximum = false;
+                if (maximum && c+1 < matrix.length)
+                    if (matrix[r][c+1] > matrix[r][c])
+                        maximum = false;
+                if (maximum && c-1 >= 0)
+                    if (matrix[r][c-1] > matrix[r][c])
+                        maximum = false;
+                if (maximum) {
+                    if (first) {
+                        max = matrix[r][c];
+                        first = false;
+                    }
+                    if (max > matrix[r][c]) max = matrix[r][c];
+                }
+            }
+        }
+        return max;
+    }
+
+    public void showMinimalFromMaximums() {
+        int[][] matrix = getMatrixInt();
+        System.out.println("Minimal from maximums: " + minimalFromMaximums(matrix));
+    }
+
 }

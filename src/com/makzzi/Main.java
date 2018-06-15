@@ -37,6 +37,7 @@ public class Main {
         //2.15.c//chapterTwo.showSaddleElementsMatrix();
         //2.16.c//chapterTwo.showRowMatrixOrderByAscending();
         //2.17.c//chapterTwo.showCountLocalMinimums();
+        //2.18.c//chapterTwo.showMinimalFromMaximums();
     }
 
 }
