@@ -1067,4 +1067,32 @@ public class ChapterTwo {
         printMatrix(columnMatrixOrderByDescending(matrix));
     }
 
+    private int[][] mainDiagonalOrderByMaximalElements(int[][] matrix) {
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix.length; column++) {
+                if (row != column) {
+                    for (int diagonal = 0; diagonal < matrix.length; diagonal++) {
+                        if (matrix[diagonal][diagonal] < matrix[row][column]) {
+                            int current = matrix[row][column];
+                            matrix[row][column] = matrix[matrix.length-1][matrix.length-1];
+                            for (int queue = matrix.length-1; queue > diagonal ; queue--) {
+                                matrix[queue][queue] = matrix[queue-1][queue-1];
+                            }
+                            matrix[diagonal][diagonal] = current;
+                            column--;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        return matrix;
+    }
+
+    public void showMainDiagonalOrderByMaximalElements() {
+        int[][] matrix = getMatrixInt();
+        System.out.println("Result matrix: ");
+        printMatrix(mainDiagonalOrderByMaximalElements(matrix));
+    }
+
 }
